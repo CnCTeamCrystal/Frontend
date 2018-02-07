@@ -1,14 +1,16 @@
 
 $("#start_ajax").click(function(){
+  var company = $("#Company").val();
+  $("#compTitle").text(company);
     $.ajax({
         type:"POST",
         url:"http://169.56.88.197:8080/chart ",
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        data: {name:"삼성전자"},
+        data: {name:company},
         dataType : "json",
         success: function(xml){
             var result = xml;
-            Plotly.plot(ids="1",result.data,result.layout || {});
+            Plotly.plot(ids="Chart",result.data,result.layout || {});
             alert("hhello");
             keyword();
         },
@@ -18,12 +20,12 @@ $("#start_ajax").click(function(){
     });
 });
 function keyword(){
-//   var company = $("#Company").val();
+   var company = $("#Company").val();
   // $("#compTitle").text(company);
   alert("keyword");
     $.ajax({
         type:"GET",
-        url:"http://169.56.88.197:9090/discovery/realtime/"+"삼성전자",
+        url:"http://169.56.88.197:9090/discovery/realtime/"+company,
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         dataType : "json",
         success: function(xml){
