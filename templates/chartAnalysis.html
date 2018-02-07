@@ -7,7 +7,7 @@
 <title>Portfolio</title>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row">
 		  <div>
-		  <div class="col-md-4 col-lg-2"><img src="images/crystalEye.png" width="100" height="100" alt=""/>
+		  <div class="col-md-4 col-lg-2"><img src="{{ url_for('static',filename='images/crystalEye.png') }}" width="100" height="100" alt=""/>
 		  </div>
 		  <div>
         	<h3 class="text-center">종목검색</h3>
@@ -69,7 +69,7 @@
         <p></p>
 </div>
       <div class="col-sm-4 col-lg-7">
-        <h2>SK</h2>
+        <h2 id="compTitle"></h2>
         <!-- Green Progress Bar -->
          <div id="Chart" height="500" width="500"></div>
 
