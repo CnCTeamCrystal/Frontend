@@ -12,7 +12,7 @@ function onClickKeyword_news() {
 
     }
 
-
+//hi
   var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
