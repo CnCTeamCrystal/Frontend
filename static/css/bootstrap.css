@@ -1266,9 +1266,6 @@ h1,
 .h1 {
   font-size: 36px;
 }
-.row .col-xs-12.text-center h1 {
-}
-
 h2,
 .h2 {
   font-size: 30px;
@@ -1625,8 +1622,7 @@ pre code {
   float: left;
 }
 .col-xs-12 {
-  width: 50%;
- 
+  width: 100%;
 }
 .col-xs-11 {
   width: 91.66666667%;
@@ -1960,7 +1956,6 @@ pre code {
   }
   .col-md-6 {
     width: 50%;
-	  height: 25%
   }
   .col-md-5 {
     width: 41.66666667%;
@@ -5000,7 +4995,7 @@ a.badge:focus {
   }
   .jumbotron h1,
   .jumbotron .h1 {
-	font-size: 30px;
+    font-size: 63px;
   }
 }
 .thumbnail {
@@ -5210,7 +5205,7 @@ a.thumbnail.active {
   zoom: 1;
 }
 .media-body {
-  width: 100%;
+  width: 10000px;
 }
 .media-object {
   display: block;

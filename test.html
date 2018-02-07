@@ -1,0 +1,28 @@
+
+<button id="start_ajax">서버와 통신시작</button>
+<div id="1" height="300" width="500"></div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-1.5.0.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.js"></script>
+
+<script type="text/javascript">
+
+$("#start_ajax").click(function(){
+    $.ajax({
+        type:"POST",
+        url:"http://169.56.88.197:8080/chart ",
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        data: {name:"삼성전자"},
+        dataType : "json",
+        success: function(xml){
+            var result = xml;
+            Plotly.plot(ids="1",result.data,result.layout || {});
+        },
+        error: function(xhr, status, error) {
+            alert(error);
+        }
+    });
+});
+</script>
