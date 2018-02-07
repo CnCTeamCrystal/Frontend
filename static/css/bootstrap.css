@@ -117,9 +117,48 @@ textarea {
   font: inherit;
   color: inherit;
 }
-button {
-  overflow: visible;
+
+button{
+	overflow: visible;
+  text-align: center; 
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:33px;
+	width: 100px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
 }
+button:hover{
+  background:#e8f4f3;
+  color:#1AAB8A;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
 button,
 select {
   text-transform: none;
@@ -1105,6 +1144,22 @@ a:focus {
   color: #23527c;
   text-decoration: underline;
 }
+
+.hover {
+     
+      line-height:80px; 
+      margin-top: 20px auto;
+	
+      background-color:#f7e8d8;  
+      transition:all 0.8s, color 0.3s 0.3s;  
+      color:#504f4f; cursor: pointer;  
+   }
+
+.effect3:hover{
+      box-shadow:0 150px 0 0 rgba(0,0,0,0.1) inset;
+}
+
+
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
