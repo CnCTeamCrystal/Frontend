@@ -1,5 +1,5 @@
 <script type="text/javascript">
-$("#start_ajax").click(function(){
+function keyword(){
    var company = $("#Company").val();
   // $("#compTitle").text(company);
     $.ajax({
@@ -30,5 +30,5 @@ $("#start_ajax").click(function(){
             alert(error);
         }
     });
-});
+}
 </script>

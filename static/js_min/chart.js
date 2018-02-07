@@ -1,5 +1,5 @@
 
-
+<script src="{{ url_for('static',filename='js_min/keyword.js') }}"></script>
 $("#start_ajax").click(function(){
    var company = $("#Company").val();
    $("#compTitle").text(company);
@@ -12,6 +12,7 @@ $("#start_ajax").click(function(){
         success: function(xml){
             var result = xml;
             Plotly.plot(ids="Chart",result.data,result.layout || {});
+            keyword();
         },
         error: function(xhr, status, error) {
             alert(error);
