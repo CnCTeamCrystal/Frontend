@@ -173,85 +173,13 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-
-  <!--keywordList js by suhyun-->
-  <script language="JavaScript">
-
-    function onClickKeyword_news() {
-
-      var json_News_Text = '{"topics": [{"key": "Sweden","matching_results": 1615},{"key": "South Korea","matching_results": 348},{"key": "United States","matching_results": 271},{"key": "German language","matching_results": 266}]}'
-      var contact = JSON.parse(json_News_Text);
-
-
-        var tmp_string="";
-        var topic_cnt = contact.topics.length;
-        for(var cnt=0; cnt<topic_cnt; cnt++){
-
-          document.getElementById("keyword_list_all").innerHTML += "<a href=a>"+ '#' + contact.topics[cnt].key + ' ';
-
-        }
-
-
-      var getJSON = function(url, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-        xhr.responseType = 'json';
-        xhr.onload = function() {
-          var status = xhr.status;
-          if (status === 200) {
-            callback(null, xhr.response);
-          } else {
-            callback(status, xhr.response);
-          }
-        };
-        xhr.send();
-      };
-    }
-  </script>
-
-
-  <!--chart js by parkminsoo-->
-
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-1.5.0.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.js"></script>
 
-  <script type="text/javascript">
-
-  $("#start_ajax").click(function(){
-     var company = $("#Company").val();
-     $("#compTitle").text(company);
-      $.ajax({
-          type:"POST",
-          url:"http://169.56.88.197:8080/chart ",
-          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-          data: {name: company},
-          dataType : "json",
-          success: function(xml){
-              var result = xml;
-              Plotly.plot(ids="Chart",result.data,result.layout || {});
-          },
-          error: function(xhr, status, error) {
-              alert(error);
-          }
-      });
-  });
-  </script>
-
-  <script language="JavaScript">
-    function jsonParsing() {
-      var jsontext = '{"name":"sk-hynix","date":"2018-02-03 14:00","keyword":["반도체","충칭", "SK실트론"]}';
-      var obj = JSON.parse(jsontext);
-      var k0 = jsontext.keyword[0];
-      var len = jsontext.keyword.length;
-
-      document.getElementById("keyword_list").innerHTML = k0;
-      alert("hihi");
-    }
-  </script>
-
-
+  <script src="js/bootstrap.js"></script>
+  <script src="js_min/chart.js"></script>
+  <script src="js_su/keyword.js"></script>
 
 </body>
 
