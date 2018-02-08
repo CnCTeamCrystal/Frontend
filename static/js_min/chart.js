@@ -11,7 +11,7 @@ $("#start_ajax").click(function(){
         success: function(xml){
             var result = xml;
             Plotly.plot(ids="Chart",result.data,result.layout || {});
-            alert("hhello");
+//            alert("hhello");
             keyword();
         },
         error: function(xhr, status, error) {
@@ -22,7 +22,7 @@ $("#start_ajax").click(function(){
 function keyword(){
    var company = $("#Company").val();
   // $("#compTitle").text(company);
-  alert("keyword");
+//  alert("keyword");
     $.ajax({
         type:"GET",
         url:"http://169.56.88.197:9090/discovery/realtime/"+company,
@@ -37,7 +37,7 @@ function keyword(){
                 if(key == "enriched_title.keywords.text"  ){
                   //document.write(result.results[i].highlight[key]+" ");
                   kd = "#"+result.results[i].highlight[key];
-                  document.getElementById("keyword_list_all").innerHTML += "<a href="+result.results[i].url+">"+ kd +"<br>";
+                  document.getElementById("keyword_list_all").innerHTML += "<a href="+result.results[i].url+"style=color:rgb(0,0,0)>"+ kd +"<br>";
                 }
                 // else if(key == "enriched_text.keywords.text"){
                 //   //document.write(result.results[i].highlight[key]+" ");
