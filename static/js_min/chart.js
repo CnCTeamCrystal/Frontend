@@ -1,5 +1,6 @@
 //chart
 $("#start_ajax").click(function(){
+  isloading.start();
   var company = $("#Company").val();
   $("#compTitle").text(company);
     $.ajax({
@@ -15,6 +16,7 @@ $("#start_ajax").click(function(){
             keyword();
             positive();
             negative();
+            isloading.stop()
         },
         error: function(xhr, status, error) {
             alert(error);
