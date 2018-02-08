@@ -13,6 +13,7 @@ $("#start_ajax").click(function(){
             Plotly.plot(ids="Chart",result.data,result.layout || {});
 //            alert("hhello");
             keyword();
+            positive();
         },
         error: function(xhr, status, error) {
             alert(error);
@@ -91,7 +92,7 @@ function keyword(){
 }
 
 function positive(){
-   var company = $("#compTitle").text();
+   var company = $("#compTitle").text();s
   // $("#compTitle").text(company);
   alert("keyword");
     $.ajax({
