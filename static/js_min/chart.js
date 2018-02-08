@@ -94,6 +94,7 @@ function keyword(){
 
 function positive(){
    var company = $("#compTitle").text();
+   document.getElementById("keyword_list_all3").innerHTML="";
   // $("#compTitle").text(company);
     $.ajax({
         type:"GET",
@@ -114,6 +115,7 @@ function positive(){
 
 function negative(){
   var company = $("#compTitle").text();
+  document.getElementById("keyword_list_all4").innerHTML="";
     // $("#compTitle").text(company);
   //  alert("keyword");
       $.ajax({
