@@ -89,3 +89,24 @@ function keyword(){
         }
     });
 }
+
+function positive(){
+   var company = $("#Company").val();
+  // $("#compTitle").text(company);
+  alert("keyword");
+    $.ajax({
+        type:"GET",
+        url:"http://169.56.88.197:9090/discovery/positive/"+company,
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        dataType : "json",
+        success: function(xml){
+            var result = xml;
+            for(var i in result.keywords){
+              document.getElementById("keyword_list_all3").innerHTML += "#"+result.keywords[i]+"&nbsp;";
+            }
+        },
+        error: function(xhr, status, error) {
+            alert(error);
+        }
+    });
+}
