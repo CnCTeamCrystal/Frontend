@@ -21,8 +21,7 @@ $("#start_ajax").click(function(){
 });
 function keyword(){
    var company = $("#Company").val();
-     $("#keyword_list_all").val(" ") ;
-  // $("#compTitle").text(company);
+   document.getElementById("keyword_list_all").innerHTML = ""; 
 //  alert("keyword");
     $.ajax({
         type:"GET",
