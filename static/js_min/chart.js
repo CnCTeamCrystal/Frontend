@@ -25,7 +25,7 @@ $("#start_ajax2").click(function(){
   document.getElementById("keyword_list_all2").innerHTML="";
   $.ajax({
       type:"GET",
-      url:"http://169.56.88.197:9090/discovery/period/"+company+"/"+$("#sdate").val()+"/"+$("#edate"),
+      url:"http://169.56.88.197:9090/discovery/period/"+company+"/"+$("#sdate").val()+"/"+$("#edate").val(),
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       dataType : "json",
       success: function(xml){
