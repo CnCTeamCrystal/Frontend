@@ -92,7 +92,7 @@ function keyword(){
 }
 
 function positive(){
-   var company = $("#compTitle").text();s
+   var company = $("#compTitle").text();
   // $("#compTitle").text(company);
   alert("keyword");
     $.ajax({
