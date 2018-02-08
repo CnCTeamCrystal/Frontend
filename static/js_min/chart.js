@@ -29,6 +29,7 @@ function keyword(){
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         dataType : "json",
         success: function(xml){
+            $("#keyword_list_all").val() = "";
             var result = xml;
             for(var i in result.results){
               //document.write("url:"+result.results[i].url+"<br>");
