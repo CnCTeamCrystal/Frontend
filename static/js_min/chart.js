@@ -40,7 +40,7 @@ $("#start_ajax2").click(function(){
               if(key == "enriched_title.keywords.text"  ){
                 //document.write(result.results[i].highlight[key]+" ");
                 kd = "#"+result.results[i].highlight[key];
-                document.getElementById("keyword_list_all2").innerHTML += "<a href="+result.results[i].url+"style=\"color:rgb(255,255,255)\">"+ kd+"&nbsp;";
+                document.getElementById("keyword_list_all2").innerHTML += "<a style=color:rgb(255,255,255) href="+result.results[i].url+">"+ kd+"&nbsp;";
               }
               // else if(key == "enriched_text.keywords.text"){
               //   //document.write(result.results[i].highlight[key]+" ");
@@ -75,7 +75,7 @@ function keyword(){
                 if(key == "enriched_title.keywords.text"  ){
                   //document.write(result.results[i].highlight[key]+" ");
                   kd = "#"+result.results[i].highlight[key];
-                  document.getElementById("keyword_list_all").innerHTML += "<a href="+result.results[i].url+"style=color:rgb(0,0,0)>"+ kd+"&nbsp;";
+                  document.getElementById("keyword_list_all").innerHTML += "<a style=color:rgb(255,255,255) href="+result.results[i].url+">"+ kd+"&nbsp;";
                 }
                 // else if(key == "enriched_text.keywords.text"){
                 //   //document.write(result.results[i].highlight[key]+" ");
