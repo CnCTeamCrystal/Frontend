@@ -57,6 +57,7 @@ $("#start_ajax2").click(function(){
 function keyword(){
    var company = $("#Company").val();
    document.getElementById("keyword_list_all").innerHTML="";
+   document.getElementById("keyword_list_all2").innerHTML="";
 //  alert("keyword");
     $.ajax({
         type:"GET",
