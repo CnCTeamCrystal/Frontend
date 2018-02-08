@@ -14,6 +14,7 @@ $("#start_ajax").click(function(){
 //            alert("hhello");
             keyword();
             positive();
+            negative();
         },
         error: function(xhr, status, error) {
             alert(error);
@@ -94,7 +95,6 @@ function keyword(){
 function positive(){
    var company = $("#compTitle").text();
   // $("#compTitle").text(company);
-  alert("keyword");
     $.ajax({
         type:"GET",
         url:"http://169.56.88.197:9090/discovery/positive/"+company,
@@ -110,4 +110,25 @@ function positive(){
             alert(error);
         }
     });
+}
+
+function negative(){
+  var company = $("#compTitle").text();
+    // $("#compTitle").text(company);
+  //  alert("keyword");
+      $.ajax({
+          type:"GET",
+          url:"http://169.56.88.197:9090/discovery/negative/"+company,
+          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+          dataType : "json",
+          success: function(xml){
+              var result = xml;
+              for(var i in result.keywords){
+                document.getElementById("keyword_list_all4").innerHTML += "#"+result.keywords[i]+"&nbsp;";
+              }
+          },
+          error: function(xhr, status, error) {
+              alert(error);
+          }
+      });
 }
