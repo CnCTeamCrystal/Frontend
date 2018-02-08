@@ -21,7 +21,7 @@ $("#start_ajax").click(function(){
 });
 function keyword(){
    var company = $("#Company").val();
-   document.getElementById("keyword_list_all").innerHTML = ""; 
+   document.getElementById("keyword_list_all").innerHTML="";
 //  alert("keyword");
     $.ajax({
         type:"GET",
@@ -37,7 +37,7 @@ function keyword(){
                 if(key == "enriched_title.keywords.text"  ){
                   //document.write(result.results[i].highlight[key]+" ");
                   kd = "#"+result.results[i].highlight[key];
-                  document.getElementById("keyword_list_all").innerHTML += "<a href="+result.results[i].url+"style=color:rgb(0,0,0)>"+ kd +"<br>";
+                  document.getElementById("keyword_list_all").innerHTML += "<a href="+result.results[i].url+"style=color:rgb(0,0,0)>"+ kd +" ";
                 }
                 // else if(key == "enriched_text.keywords.text"){
                 //   //document.write(result.results[i].highlight[key]+" ");
