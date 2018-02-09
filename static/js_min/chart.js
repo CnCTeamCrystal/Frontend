@@ -26,6 +26,7 @@ $("#start_ajax").click(function(){
 //period
 $("#start_ajax2").click(function(){
   var company = $("#compTitle").text();
+  isloading.start();
   document.getElementById("keyword_list_all2").innerHTML="";
   $.ajax({
       type:"GET",
@@ -48,6 +49,7 @@ $("#start_ajax2").click(function(){
               //   //document.write(result.results[i].highlight[key]+" ");
               //   kd += "#"+result.results[i].highlight[key];
               // }
+              isloading.stop();
             }
 
           //  document.write("<br>");
@@ -60,6 +62,7 @@ $("#start_ajax2").click(function(){
 });
 function keyword(){
    var company = $("#Company").val();
+   isloading.start();
    document.getElementById("keyword_list_all").innerHTML="";
    document.getElementById("keyword_list_all2").innerHTML="";
 //  alert("keyword");
@@ -86,6 +89,7 @@ function keyword(){
               }
 
             //  document.write("<br>");
+            isloading.stop();
             }
         },
         error: function(xhr, status, error) {
@@ -97,6 +101,7 @@ function keyword(){
 function positive(){
    var company = $("#compTitle").text();
    document.getElementById("keyword_list_all3").innerHTML="";
+   isloading.start();
   // $("#compTitle").text(company);
     $.ajax({
         type:"GET",
@@ -108,6 +113,7 @@ function positive(){
             for(var i in result.keywords){
               document.getElementById("keyword_list_all3").innerHTML += "#"+result.keywords[i]+"&nbsp;";
             }
+            isloading.stop();
         },
         error: function(xhr, status, error) {
             alert(error);
@@ -117,6 +123,7 @@ function positive(){
 
 function negative(){
   var company = $("#compTitle").text();
+  isloading.start();
   document.getElementById("keyword_list_all4").innerHTML="";
     // $("#compTitle").text(company);
   //  alert("keyword");
@@ -130,6 +137,7 @@ function negative(){
               for(var i in result.keywords){
                 document.getElementById("keyword_list_all4").innerHTML += "#"+result.keywords[i]+"&nbsp;";
               }
+              isloading.stop();
           },
           error: function(xhr, status, error) {
               alert(error);
