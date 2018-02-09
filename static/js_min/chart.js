@@ -16,12 +16,12 @@ $("#start_ajax").click(function(){
             keyword();
             positive();
             negative();
-            isloading.stop()
         },
         error: function(xhr, status, error) {
             alert(error);
         }
     });
+    isloading.stop();
 });
 //period
 $("#start_ajax2").click(function(){
@@ -49,7 +49,6 @@ $("#start_ajax2").click(function(){
               //   //document.write(result.results[i].highlight[key]+" ");
               //   kd += "#"+result.results[i].highlight[key];
               // }
-              isloading.stop();
             }
 
           //  document.write("<br>");
@@ -59,6 +58,7 @@ $("#start_ajax2").click(function(){
           alert(error);
       }
   });
+  isloading.stop();
 });
 function keyword(){
    var company = $("#Company").val();
@@ -89,13 +89,13 @@ function keyword(){
               }
 
             //  document.write("<br>");
-            isloading.stop();
             }
         },
         error: function(xhr, status, error) {
             alert(error);
         }
     });
+    isloading.stop();
 }
 
 function positive(){
@@ -113,12 +113,12 @@ function positive(){
             for(var i in result.keywords){
               document.getElementById("keyword_list_all3").innerHTML += "#"+result.keywords[i]+"&nbsp;";
             }
-            isloading.stop();
         },
         error: function(xhr, status, error) {
             alert(error);
         }
     });
+    isloading.stop();
 }
 
 function negative(){
@@ -137,10 +137,10 @@ function negative(){
               for(var i in result.keywords){
                 document.getElementById("keyword_list_all4").innerHTML += "#"+result.keywords[i]+"&nbsp;";
               }
-              isloading.stop();
           },
           error: function(xhr, status, error) {
               alert(error);
           }
       });
+      isloading.stop();
 }
